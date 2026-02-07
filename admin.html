@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-white min-h-screen p-4">
+
+    <div class="max-w-md mx-auto bg-gray-900 p-6 rounded-lg shadow-xl">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Admin Panel</h1>
+            <a href="index.html" class="text-blue-400 underline">Back to Store</a>
+        </div>
+
+        <div id="admin-login" class="mb-4">
+            <p class="text-yellow-400 text-sm mb-2">Sign in with Admin Account</p>
+            <input id="admin-email" type="email" placeholder="Admin Email" class="w-full p-2 mb-2 text-black rounded">
+            <input id="admin-pass" type="password" placeholder="Password" class="w-full p-2 mb-2 text-black rounded">
+            <button onclick="adminLogin()" class="w-full bg-blue-600 p-2 rounded">Login</button>
+        </div>
+
+        <div id="product-form" class="hidden space-y-4">
+            <h2 class="text-xl font-bold border-b pb-2">Add New Product</h2>
+            
+            <input id="p-name" type="text" placeholder="Product Name" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+            <input id="p-price" type="number" placeholder="Price (INR)" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+            
+            <label class="block text-sm text-gray-400">Product Image</label>
+            <input id="p-image" type="file" accept="image/*" class="w-full text-sm text-gray-400">
+            
+            <button onclick="uploadProduct()" id="upload-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Upload & Add Product
+            </button>
+            <div id="status" class="text-center text-sm mt-2"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./admin-logic.js"></script>
+</body>
+</html>
